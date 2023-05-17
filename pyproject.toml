@@ -1,0 +1,39 @@
+[project]
+name = "masterpassword"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Fabian Wiesel", email = "fabian.wiesel@sap.com"},
+]
+dependencies = ["scrypt==0.8.6"]
+
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+
+[project.scripts]
+masterpassword = "masterpassword.masterpassword:main"
+
+[build-system]
+requires = ["setuptools ~= 65.5"]
+
+[tool.ruff]
+# Allow lines to be as long as 120 characters.
+line-length = 120
+select = ["E", "F", "W", "I", "N", "UP"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = ruff
+basepython = python3.8
+
+[testenv:pep8]
+commands = ruff
+deps = ruff
+basepython = python3.8
+"""
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
