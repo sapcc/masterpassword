@@ -1,11 +1,11 @@
 [project]
 name = "masterpassword"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = [
     {name = "Fabian Wiesel", email = "fabian.wiesel@sap.com"},
 ]
-dependencies = ["scrypt==0.8.6"]
+dependencies = ["scrypt ~= 0.8.6"]
 
 requires-python = ">=3.8"
 readme = "README.md"
@@ -15,7 +15,7 @@ license = {text = "Apache-2.0"}
 masterpassword = "masterpassword.masterpassword:main"
 
 [build-system]
-requires = ["setuptools ~= 65.5"]
+requires = ["setuptools ~= 65.5", "wheel"]
 
 [tool.ruff]
 # Allow lines to be as long as 120 characters.
